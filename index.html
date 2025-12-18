@@ -90,18 +90,20 @@
     }
 
     #cda-dorpsquiz .brand-logo {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #ffffff 0, var(--cda-green) 55%, var(--cda-green-dark) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 900;
-      font-size: 32px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-    }
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0, var(--cda-green) 55%, var(--cda-green-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 900;
+  font-size: 22px;       /* kleiner dan eerst */
+  letter-spacing: 0.08em; /* optisch rustiger */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
 
     #cda-dorpsquiz .brand-text h1 {
       font-size: 20px;
@@ -595,7 +597,7 @@
     <div class="app" role="application" aria-label="Bewustwordingsspel CDA Zandvoort">
       <header>
         <div class="brand">
-          <div class="brand-logo" aria-hidden="true">C</div>
+          <div class="brand-logo" aria-hidden="true">CDA</div>
           <div class="brand-text">
             <h1>CDA Zandvoort – Dorpsquiz</h1>
             <p>Ontdek in 3 minuten of jij ook een <strong>Zandvoorter voor Zandvoorters</strong> bent.</p>
@@ -703,190 +705,138 @@
         if (!root) return;
 
         var quizQuestions = [
-          {
-            theme: "Wonen",
-            question:
-              "Steeds meer jongeren en gescheiden gezinnen moeten Zandvoort verlaten omdat er geen betaalbare woning is. Wat wil CDA Zandvoort?",
-            options: [
-              "Vooral dure koopappartementen bouwen voor investeerders",
-              "Doorbouwen met veel sociale en betaalbare woningen, flexwoningen voor jongeren en betere ouderenhuisvesting voor doorstroming",
-              "Minder bouwen zodat het dorp niet verandert"
-            ],
-            correctIndex: 1,
-            explanation:
-              "CDA Zandvoort wil flink doorbouwen met nadruk op betaalbare huur- en koopwoningen, flexwoningen voor jongeren en passende woningen voor senioren zodat Zandvoorters in Zandvoort kunnen blijven wonen."
-          },
-          {
-            theme: "Vervoer & bereikbaarheid",
-            question:
-              "In sommige buurten is nog steeds veel parkeerdruk. Wat is de aanpak van CDA Zandvoort?",
-            options: [
-              "Alle parkeertarieven afschaffen zodat iedereen overal kan staan",
-              "Meer ondergronds parkeren, betere parkeer-app, slimme tarieven per wijk en goede alternatieven zoals E-busjes",
-              "Alle auto’s uit het dorp weren"
-            ],
-            correctIndex: 1,
-            explanation:
-              "Het CDA wil het parkeerbeleid verbeteren door meer ondergronds parkeren, slimmer tariefgebruik, goede bereikbaarheid voor bewoners en bezoekers én een dorpsshuttle met E-busjes."
-          },
-          {
-            theme: "Financieel gezond",
-            question:
-              "Zandvoort staat er financieel goed voor. Wat betekent dit voor de komende jaren volgens het CDA?",
-            options: [
-              "Zo veel mogelijk oppotten en weinig investeren in het dorp",
-              "Realistisch en sluitend begroten, maar wel blijven investeren in het dorp via een Strategische Investerings Agenda",
-              "De OZB fors verhogen om extra reserves op te bouwen"
-            ],
-            correctIndex: 1,
-            explanation:
-              "CDA Zandvoort wil een gezonde meerjarenbegroting combineren met investeren in wonen en leefomgeving, zonder onnodig hoge belastingdruk."
-          },
-          {
-            theme: "Participatie",
-            question:
-              "Participatie levert soms frustratie op bij inwoners. Wat wil CDA Zandvoort verbeteren?",
-            options: [
-              "Minder participatie, dan is het sneller klaar",
-              "Duidelijk vooraf zeggen waarover inwoners mogen meepraten en steeds terugkoppelen wat er met hun ideeën gebeurt",
-              "Alleen participeren via ingewikkelde digitale formulieren"
-            ],
-            correctIndex: 1,
-            explanation:
-              "Het CDA wil laagdrempelige participatie, helder verwachtingsmanagement en goede terugkoppeling, zodat inwoners zien wat er met hun inbreng gebeurt."
-          },
-          {
-            theme: "Economie & toerisme",
-            question:
-              "Hoe kijkt CDA Zandvoort naar ondernemers en toerisme?",
-            options: [
-              "Ondernemers vooral meer regels en hogere lasten geven",
-              "Ondernemers de ruimte geven, jaarrond toerisme en nieuwe indoor-activiteiten stimuleren en meedenken in plaats van tegenwerken",
-              "Alle toeristische activiteiten beperken tot de zomer"
-            ],
-            correctIndex: 1,
-            explanation:
-              "Ondernemers zijn de motor van de Zandvoortse economie. Het CDA wil een betrouwbaar bestuur, ruimte voor vernieuwing en een sterker jaarrond aanbod voor dorp en bezoekers."
-          },
-          {
-            theme: "Jongeren",
-            question:
-              "Wat vindt CDA Zandvoort belangrijk voor jongeren in het dorp?",
-            options: [
-              "Weinig aandacht, jongeren vertrekken toch wel",
-              "Een jongerenraad, goede stageplekken, fijne ontmoetingsplekken én voorrang bij woningen voor Zandvoortse jongeren",
-              "Jongeren vooral naar andere gemeenten doorverwijzen"
-            ],
-            correctIndex: 1,
-            explanation:
-              "De jeugd heeft de toekomst. Het CDA wil jongeren actief betrekken bij besluiten, zorgen voor woningen, stageplekken en aantrekkelijke plekken om elkaar te ontmoeten."
-          },
-          {
-            theme: "Natuur & milieu",
-            question:
-              "Zandvoort is een groene oase. Wat is een speerpunt van CDA Zandvoort?",
-            options: [
-              "Minder groen en meer steen zodat onderhoud goedkoper wordt",
-              "Bewoners betrekken met plantsoen-adoptie, beter afvalbeheer en duurzame nieuwbouw",
-              "De natuur alleen beschermen in de duinen, niet in het dorp"
-            ],
-            correctIndex: 1,
-            explanation:
-              "Het CDA wil Zandvoort groen houden door bewoners te betrekken bij plantsoenen, zwerfvuil aan te pakken en bouwprojecten klimaatvriendelijk te maken."
-          },
-          {
-            theme: "Meedoen & sociale zekerheid",
-            question:
-              "Wat betekent ‘meedoen’ voor CDA Zandvoort?",
-            options: [
-              "Iedereen moet het zelf maar uitzoeken",
-              "Zorg voor bestaanszekerheid, oog voor stille armoede en een menselijke benadering in het sociaal domein",
-              "Alle ondersteuning volledig digitaliseren zonder persoonlijk contact"
-            ],
-            correctIndex: 1,
-            explanation:
-              "Het CDA staat voor een sterke sociale basis: persoonlijke aandacht, bestaanszekerheid en ondersteuning voor wie dat nodig heeft."
-          },
-          {
-            theme: "Samenleving & veiligheid",
-            question:
-              "Wat wil CDA Zandvoort rond veiligheid in het dorp?",
-            options: [
-              "Minder handhaving om geld te besparen",
-              "Zichtbare en daadkrachtige handhaving tegen overlast, vandalisme en vuurwerk, met een vaste basis in Zandvoort zelf",
-              "Alleen reageren op meldingen van toeristen"
-            ],
-            correctIndex: 1,
-            explanation:
-              "Veiligheid en respectvol samenleven horen bij een hechte dorpsgemeenschap. Het CDA wil dat handhaving zichtbaar aanwezig en goed bereikbaar is."
-          },
-          {
-            theme: "Onderwijs & sport",
-            question:
-              "Hoe verbindt CDA Zandvoort onderwijs en sport met het dorp?",
-            options: [
-              "Scholen en verenigingen zoveel mogelijk aan hun lot overlaten",
-              "Samenwerking met scholen, sportclubs en ondernemers versterken, sport inzetten voor gezondheid en jaarrond evenementen organiseren",
-              "Alle sportfaciliteiten privatiseren"
-            ],
-            correctIndex: 1,
-            explanation:
-              "Het CDA wil goed onderwijs, sterke sportverenigingen en sport inzetten voor gezondheid, ontmoeting én jaarrond activiteiten in Zandvoort."
-          }
-        ];
+  {
+    theme: "Wonen",
+    question:
+      "Veel Zandvoorters maken zich zorgen over betaalbare woningen voor jongeren en ouderen. Welke richting past volgens CDA Zandvoort het best?",
+    options: [
+      "Vooral bouwen voor de vrije markt en vertrouwen op doorstroming",
+      "Gericht bouwen voor Zandvoorters, met betaalbare woningen voor jongeren en passende woningen voor senioren",
+      "De woningbouw sterk beperken om het dorp klein te houden"
+    ],
+    correctIndex: 1,
+    explanation:
+      "CDA Zandvoort wil dat Zandvoorters in hun eigen dorp kunnen blijven wonen door gericht te bouwen voor jongeren en senioren."
+  },
+  {
+    theme: "Vervoer & bereikbaarheid",
+    question:
+      "Parkeerdruk en bereikbaarheid zorgen regelmatig voor discussie. Wat is volgens CDA Zandvoort een realistische aanpak?",
+    options: [
+      "Slim parkeren combineren met alternatieven zoals dorpsshuttles en betere fietsvoorzieningen",
+      "Parkeren volledig vrijlaten zodat de markt het regelt",
+      "Autoverkeer zoveel mogelijk weren uit het hele dorp"
+    ],
+    correctIndex: 0,
+    explanation:
+      "Het CDA kiest voor een combinatie van slim parkeerbeleid en goede alternatieven, zodat bewoners én bezoekers het dorp goed kunnen bereiken."
+  },
+  {
+    theme: "Financieel gezond",
+    question:
+      "Zandvoort staat er financieel redelijk voor. Wat betekent dat voor het beleid van CDA Zandvoort?",
+    options: [
+      "Zo min mogelijk investeren om reserves maximaal te laten groeien",
+      "Belastingen verhogen om extra ruimte te creëren",
+      "Verantwoord begroten én blijven investeren in het dorp"
+    ],
+    correctIndex: 2,
+    explanation:
+      "CDA Zandvoort wil financieel gezond blijven en tegelijkertijd investeren in voorzieningen die het dorp sterker maken."
+  },
+  {
+    theme: "Participatie",
+    question:
+      "Inwoners willen vaker betrokken worden bij plannen. Hoe ziet CDA Zandvoort participatie?",
+    options: [
+      "Inwoners vooral informeren nadat besluiten zijn genomen",
+      "Heldere afspraken maken over inspraak en terugkoppelen wat ermee gebeurt",
+      "Participatie beperken tot formele zienswijzen"
+    ],
+    correctIndex: 1,
+    explanation:
+      "Goede participatie betekent duidelijkheid vooraf én serieus omgaan met de inbreng van inwoners."
+  },
+  {
+    theme: "Economie & toerisme",
+    question:
+      "Toerisme en leefbaarheid moeten in balans blijven. Welke koers past bij CDA Zandvoort?",
+    options: [
+      "Toerisme vooral beperken om rust te bewaren",
+      "Ruimte geven aan ondernemers en inzetten op jaarrond toerisme",
+      "Toerisme volledig overlaten aan marktpartijen"
+    ],
+    correctIndex: 1,
+    explanation:
+      "CDA Zandvoort ziet ondernemers als partners en wil werken aan een gezonde, jaarronde economie."
+  },
+  {
+    theme: "Jongeren",
+    question:
+      "Jongeren zijn belangrijk voor de toekomst van Zandvoort. Wat vindt CDA Zandvoort essentieel?",
+    options: [
+      "Vooral inzetten op voorzieningen voor ouderen",
+      "Jongeren betrekken bij beleid en zorgen voor kansen op wonen en werk",
+      "Jongeren vooral regionaal laten meedoen"
+    ],
+    correctIndex: 1,
+    explanation:
+      "Het CDA wil jongeren actief betrekken en perspectief bieden binnen het eigen dorp."
+  },
+  {
+    theme: "Natuur & milieu",
+    question:
+      "Zandvoort ligt midden in een bijzondere natuur. Hoe kijkt CDA Zandvoort hiernaar?",
+    options: [
+      "Groen vooral behouden in natuurgebieden buiten het dorp",
+      "Vergroenen combineren met duurzame keuzes in het dorp",
+      "Nieuwe ontwikkelingen los zien van duurzaamheid"
+    ],
+    correctIndex: 1,
+    explanation:
+      "CDA Zandvoort wil natuur en leefomgeving beschermen én versterken, samen met inwoners."
+  },
+  {
+    theme: "Meedoen & sociale zekerheid",
+    question:
+      "Niet iedereen kan altijd vanzelf meekomen. Wat betekent ‘meedoen’ voor CDA Zandvoort?",
+    options: [
+      "Ondersteuning zoveel mogelijk digitaliseren",
+      "Iedereen dezelfde regels laten volgen zonder uitzonderingen",
+      "Persoonlijke aandacht en ondersteuning waar nodig"
+    ],
+    correctIndex: 2,
+    explanation:
+      "Het CDA staat voor een menselijke benadering en oog voor inwoners die ondersteuning nodig hebben."
+  },
+  {
+    theme: "Samenleving & veiligheid",
+    question:
+      "Veiligheid en leefbaarheid zijn belangrijk voor het dorpsgevoel. Waar zet CDA Zandvoort op in?",
+    options: [
+      "Minder handhaving en meer eigen verantwoordelijkheid",
+      "Zichtbare handhaving en samenwerking met inwoners",
+      "Alleen handhaven bij grote incidenten"
+    ],
+    correctIndex: 1,
+    explanation:
+      "CDA Zandvoort kiest voor zichtbaarheid, aanspreekbaarheid en samenwerking in het dorp."
+  },
+  {
+    theme: "Onderwijs & sport",
+    question:
+      "Onderwijs en sport spelen een grote rol in het dorpsleven. Wat is de visie van CDA Zandvoort?",
+    options: [
+      "Onderwijs en sport vooral regionaal organiseren",
+      "Samenwerken met scholen en verenigingen voor een vitaal dorp",
+      "Sportfaciliteiten voornamelijk commercieel inzetten"
+    ],
+    correctIndex: 1,
+    explanation:
+      "CDA Zandvoort ziet onderwijs en sport als verbindende krachten in een gezonde gemeenschap."
+  }
+];
 
-        var themeSummaries = {
-          "Wonen": {
-            title: "Wonen – Zandvoorters moeten Zandvoorters kunnen blijven",
-            text:
-              "Meer betaalbare huur- en koopwoningen, flexwoningen voor jongeren en passende ouderenwoningen zodat de doorstroming op gang komt in Zandvoort zelf."
-          },
-          "Vervoer & bereikbaarheid": {
-            title: "Vervoer – Slim parkeren en goed bereikbaar",
-            text:
-              "Optimaliseren van het parkeerbeleid met meer ondergronds parkeren, slimme tarieven per wijk en goede alternatieven zoals E-busjes vanuit de wijken."
-          },
-          "Financieel gezond": {
-            title: "Financieel gezond – Investeren in ons dorp",
-            text:
-              "Een realistische, sluitende begroting, gezonde reserves én blijven investeren in wonen, leefomgeving en voorzieningen via een Strategische Investerings Agenda."
-          },
-          "Participatie": {
-            title: "Participatie – Samen keuzes maken",
-            text:
-              "Heldere spelregels: vooraf weten waarover je mag meepraten en altijd terugkoppeling krijgen wat er met de inbreng van inwoners en ondernemers gebeurt."
-          },
-          "Economie & toerisme": {
-            title: "Economie & toerisme – Jaarrond levendig",
-            text:
-              "Ondernemers de ruimte geven, nieuwe initiatieven omarmen en werken aan een sterk jaarrond aanbod voor zowel inwoners als bezoekers."
-          },
-          "Jongeren": {
-            title: "Jongeren – De toekomst van Zandvoort",
-            text:
-              "Een jongerenraad, ontmoetingsplekken, goede stageplaatsen en woningen voor Zandvoortse jongeren zodat zij in hun eigen dorp kunnen blijven."
-          },
-          "Natuur & milieu": {
-            title: "Natuur & milieu – Groene oase in de Randstad",
-            text:
-              "Groen koesteren, samen wijken vergroenen, zwerfvuil aanpakken en duurzaam bouwen zodat Zandvoort leefbaar blijft voor de generaties na ons."
-          },
-          "Meedoen & sociale zekerheid": {
-            title: "Meedoen – Niemand aan de kant",
-            text:
-              "Iedereen moet kunnen meedoen: met bestaanszekerheid, aandacht voor stille armoede en een menselijke maat in alle hulp en ondersteuning."
-          },
-          "Samenleving & veiligheid": {
-            title: "Samenleving & veiligheid – Met respect samen leven",
-            text:
-              "Inwoners moeten zich veilig voelen. Dat vraagt om zichtbare handhaving tegen overlast en vandalisme en een vaste basis in Zandvoort."
-          },
-          "Onderwijs & sport": {
-            title: "Onderwijs & sport – Een vitaal dorp",
-            text:
-              "Goed onderwijs en een sterk sportaanbod horen bij een gezonde dorpsgemeenschap, met aandacht voor talent, gezondheid en ontmoeting."
-          }
-        };
 
         // Element referenties
         var totalQuestionsEl = root.querySelector("#totalQuestions");
@@ -1017,15 +967,16 @@
           var message;
 
           if (percentage >= 80) {
-            message =
-              "Je kent onze plannen goed – jouw hart klopt duidelijk voor Zandvoort én voor de dorpspartij CDA.";
-          } else if (percentage >= 50) {
-            message =
-              "Mooi begin! Je deelt al veel waarden met CDA Zandvoort. Praat eens met ons verder over jouw ideeën voor het dorp.";
-          } else {
-            message =
-              "Interessant! Deze quiz laat zien waar we verschillen en waar we elkaar kunnen vinden. We gaan graag met je in gesprek.";
-          }
+  message =
+    "Je herkent je sterk in de keuzes van CDA Zandvoort. Grote kans dat we samen hetzelfde willen voor ons dorp.";
+} else if (percentage >= 50) {
+  message =
+    "Je deelt veel ideeën met CDA Zandvoort. Er zijn raakvlakken en goede aanknopingspunten voor gesprek.";
+} else {
+  message =
+    "Je ziet sommige dingen anders dan wij. Juist dat gesprek gaan we als dorpspartij graag aan.";
+}
+
 
           resultsBannerEl.style.display = "block";
           resultsBannerEl.innerHTML =
@@ -1058,74 +1009,66 @@
         });
 
         function initThemeChips() {
-          var usedThemes = [];
-          for (var i = 0; i < quizQuestions.length; i++) {
-            var t = quizQuestions[i].theme;
-            if (usedThemes.indexOf(t) === -1) {
-              usedThemes.push(t);
-            }
-          }
+  themeChipsEl.innerHTML = "";
 
-          for (var j = 0; j < usedThemes.length; j++) {
-            (function (theme, index) {
-              var chip = document.createElement("button");
-              chip.type = "button";
-              chip.className = "chip" + (index === 0 ? " active" : "");
-              chip.setAttribute("data-theme", theme);
+  var usedThemes = [];
+  quizQuestions.forEach(function (q) {
+    if (!usedThemes.includes(q.theme)) {
+      usedThemes.push(q.theme);
+    }
+  });
 
-              var dot = document.createElement("span");
-              dot.className = "chip-dot";
+  usedThemes.forEach(function (theme, index) {
+    var chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "chip" + (index === 0 ? " active" : "");
+    chip.dataset.theme = theme;
 
-              var label = document.createElement("span");
-              label.textContent = theme;
+    var dot = document.createElement("span");
+    dot.className = "chip-dot";
 
-              chip.appendChild(dot);
-              chip.appendChild(label);
+    var label = document.createElement("span");
+    label.textContent = theme;
 
-              chip.addEventListener("click", function () {
-                selectTheme(theme);
-              });
+    chip.appendChild(dot);
+    chip.appendChild(label);
 
-              themeChipsEl.appendChild(chip);
-            })(usedThemes[j], j);
-          }
+    chip.addEventListener("click", function (e) {
+      e.preventDefault();
+      selectTheme(theme);
+    });
 
-          if (usedThemes.length > 0) {
-            updateThemeDetails(usedThemes[0]);
-          }
-        }
+    themeChipsEl.appendChild(chip);
+  });
+
+  if (usedThemes.length > 0) {
+    selectTheme(usedThemes[0]);
+  }
+}
+
 
         function selectTheme(theme) {
-          var chips = themeChipsEl.querySelectorAll(".chip");
-          for (var i = 0; i < chips.length; i++) {
-            var chip = chips[i];
-            var isActive = chip.getAttribute("data-theme") === theme;
-            if (isActive) {
-              chip.classList.add("active");
-            } else {
-              chip.classList.remove("active");
-            }
-          }
-          updateThemeDetails(theme);
-        }
+  var chips = themeChipsEl.querySelectorAll(".chip");
+  chips.forEach(function (chip) {
+    chip.classList.toggle("active", chip.dataset.theme === theme);
+  });
+
+  updateThemeDetails(theme);
+}
+
 
         function updateThemeDetails(theme) {
-          var info = themeSummaries[theme];
-          if (!info) return;
-          themeDetailsEl.innerHTML =
-            "<h3>" + info.title + "</h3><p>" + info.text + "</p>";
-        }
+  var info = themeSummaries[theme];
 
-        initQuiz();
-        initThemeChips();
-      }
+  if (!info) {
+    themeDetailsEl.innerHTML =
+      "<h3>" + theme + "</h3><p>Dit thema staat centraal in onze keuzes voor een leefbaar en betrokken Zandvoort.</p>";
+    return;
+  }
 
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", startQuiz);
-      } else {
-        startQuiz();
-      }
-    })();
+  themeDetailsEl.innerHTML =
+    "<h3>" + info.title + "</h3><p>" + info.text + "</p>";
+})();
   </script>
 </body>
 </html>
