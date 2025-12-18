@@ -1,11 +1,5 @@
 <div id="cda-dorpsquiz">
-  <style>html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-
+  <style>
     :root {
       --cda-green: #007b5e;
       --cda-green-dark: #005844;
@@ -24,60 +18,53 @@
     }
 
     #cda-dorpsquiz {
-      overflow-y: auto;
-      min-height: 100dvh;
-      width: 100%;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
+      min-height: 100vh;
       background: radial-gradient(circle at top, #f2d7a0 0, #ffffff 40%, #b7e3ff 100%);
-      padding: calc(8px + env(safe-area-inset-top)) calc(8px + env(safe-area-inset-right))
-               calc(8px + env(safe-area-inset-bottom)) calc(8px + env(safe-area-inset-left));
+      padding: 12px 16px 24px;
     }
 
     #cda-dorpsquiz .app {
-      width: 100%;
-      max-width: 980px;
-      margin: 0 auto;
-      min-height: 100%;
-      flex: 1 1 auto;
-      background: rgba(255, 255, 255, 0.96);
-      border: 3px solid #f2d7a0; /* subtiele zandkleur rand */
-      border-radius: 24px;
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
+      grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr);
+      gap: 16px;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.96);
+      border: 3px solid #f2d7a0;
+      border-radius: 24px;
     }
 
     @media (max-width: 820px) {
       #cda-dorpsquiz .app {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-      }
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr);
+      gap: 16px;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.96);
+      border: 3px solid #f2d7a0;
+      border-radius: 24px;
+    }
     }
 
     @media (max-width: 600px) {
       #cda-dorpsquiz {
-      overflow-y: auto;
-      min-height: 100dvh;
-      width: 100%;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      background: radial-gradient(circle at top, #f2d7a0 0, #ffffff 40%, #b7e3ff 100%);
-      padding: calc(8px + env(safe-area-inset-top)) calc(8px + env(safe-area-inset-right))
-               calc(8px + env(safe-area-inset-bottom)) calc(8px + env(safe-area-inset-left));
-    }
+        padding: 8px;
+      }
 
       #cda-dorpsquiz .app {
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-        box-shadow: none;
-        max-width: 100%;
-      }
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr);
+      gap: 16px;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.96);
+      border: 3px solid #f2d7a0;
+      border-radius: 24px;
+    }
     }
 
     #cda-dorpsquiz header {
@@ -269,7 +256,7 @@
     }
 
     #cda-dorpsquiz .question-text {
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1.4;
       color: #10211c;
       margin-bottom: 14px;
@@ -290,7 +277,7 @@
     }
 
     #cda-dorpsquiz .option {
-      min-height: 52px;
+      min-height: 44px;
       position: relative;
       border-radius: 999px;
       border: 1px solid #d0dde0;
@@ -471,7 +458,6 @@
     }
 
     #cda-dorpsquiz .side-panel {
-      width: 100%;
       padding: 22px 22px 22px 18px;
       background: radial-gradient(circle at top left, #fdf8ec 0, #f7f0df 40%, #f9f9ff 100%);
       display: flex;
@@ -481,7 +467,6 @@
 
     @media (max-width: 820px) {
       #cda-dorpsquiz .side-panel {
-      width: 100%;
         padding: 14px;
       }
     }
@@ -613,7 +598,29 @@
       border-radius: 999px;
       font-size: 11px;
     }
-  </style>
+  
+@media (max-width: 900px) {
+  #cda-dorpsquiz {
+    padding: 8px;
+  }
+
+  #cda-dorpsquiz .app {
+    grid-template-columns: 1fr;
+    border-radius: 16px;
+  }
+
+  #cda-dorpsquiz .main-panel {
+    order: 1;
+  }
+
+  #cda-dorpsquiz .side-panel {
+    order: 2;
+    margin-top: 16px;
+  }
+}
+
+</style>
+
 
   <div class="app" role="application" aria-label="Bewustwordingsspel CDA Zandvoort">
     <header>
