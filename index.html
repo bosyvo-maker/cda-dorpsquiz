@@ -1,12 +1,6 @@
 <div id="cda-dorpsquiz">
-  <style>html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-:root {
+  <style>
+    :root {
       --cda-green: #007b5e;
       --cda-green-dark: #005844;
       --cda-sand: #f2d7a0; /* warm zandkleur Zandvoort */
@@ -24,16 +18,14 @@
     }
 
     #cda-dorpsquiz {
-      /* iOS/Safari: force a true fullscreen canvas that doesn't jump with browser UI */
       position: fixed;
       inset: 0;
       width: 100%;
-      height: 100dvh;
-      height: 100svh; /* iOS 16+ stable viewport */
-      height: -webkit-fill-available; /* fallback for older iOS */
+      height: 100svh;
+      height: -webkit-fill-available;
       background: radial-gradient(circle at top, #f2d7a0 0, #ffffff 40%, #b7e3ff 100%);
-      padding: calc(8px + env(safe-area-inset-top)) calc(8px + env(safe-area-inset-right))
-               calc(8px + env(safe-area-inset-bottom)) calc(8px + env(safe-area-inset-left));
+      padding: env(safe-area-inset-top) env(safe-area-inset-right)
+               env(safe-area-inset-bottom) env(safe-area-inset-left);
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
@@ -61,16 +53,14 @@
 
     @media (max-width: 600px) {
       #cda-dorpsquiz {
-      /* iOS/Safari: force a true fullscreen canvas that doesn't jump with browser UI */
       position: fixed;
       inset: 0;
       width: 100%;
-      height: 100dvh;
-      height: 100svh; /* iOS 16+ stable viewport */
-      height: -webkit-fill-available; /* fallback for older iOS */
+      height: 100svh;
+      height: -webkit-fill-available;
       background: radial-gradient(circle at top, #f2d7a0 0, #ffffff 40%, #b7e3ff 100%);
-      padding: calc(8px + env(safe-area-inset-top)) calc(8px + env(safe-area-inset-right))
-               calc(8px + env(safe-area-inset-bottom)) calc(8px + env(safe-area-inset-left));
+      padding: env(safe-area-inset-top) env(safe-area-inset-right)
+               env(safe-area-inset-bottom) env(safe-area-inset-left);
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
@@ -614,7 +604,15 @@
       padding: 3px 6px;
       border-radius: 999px;
       font-size: 11px;
-    }</style>
+    }
+  html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+</style>
 
   <div class="app" role="application" aria-label="Bewustwordingsspel CDA Zandvoort">
     <header>
