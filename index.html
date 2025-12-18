@@ -24,6 +24,7 @@
     }
 
     #cda-dorpsquiz {
+      overflow-y: auto;
       min-height: 100dvh;
       width: 100%;
       display: flex;
@@ -46,19 +47,20 @@
       box-shadow: var(--shadow-soft);
       overflow: hidden;
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr);
+      grid-template-columns: 1fr 1fr;
       gap: 0;
     }
 
     @media (max-width: 820px) {
       #cda-dorpsquiz .app {
         grid-template-columns: 1fr;
-        border-radius: 16px;
+        grid-template-rows: auto auto;
       }
     }
 
     @media (max-width: 600px) {
       #cda-dorpsquiz {
+      overflow-y: auto;
       min-height: 100dvh;
       width: 100%;
       display: flex;
@@ -469,6 +471,7 @@
     }
 
     #cda-dorpsquiz .side-panel {
+      width: 100%;
       padding: 22px 22px 22px 18px;
       background: radial-gradient(circle at top left, #fdf8ec 0, #f7f0df 40%, #f9f9ff 100%);
       display: flex;
@@ -478,6 +481,7 @@
 
     @media (max-width: 820px) {
       #cda-dorpsquiz .side-panel {
+      width: 100%;
         padding: 14px;
       }
     }
