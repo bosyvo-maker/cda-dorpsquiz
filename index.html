@@ -1,4 +1,10 @@
-<div id="cda-dorpsquiz">
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CDA Zandvoort – Dorpsquiz</title>
+
   <style>
     :root {
       --cda-green: #007b5e;
@@ -583,108 +589,111 @@
       font-size: 11px;
     }
   </style>
-
-  <div class="app" role="application" aria-label="Bewustwordingsspel CDA Zandvoort">
-    <header>
-      <div class="brand">
-        <div class="brand-logo" aria-hidden="true">C</div>
-        <div class="brand-text">
-          <h1>CDA Zandvoort – Dorpsquiz</h1>
-          <p>Ontdek in 3 minuten of jij ook een <strong>Zandvoorter voor Zandvoorters</strong> bent.</p>
-        </div>
-      </div>
-      <div class="badge-election">
-        <span class="badge-dot"></span>
-        Gemeenteraadsverkiezingen – Stem Dorpspartij CDA
-      </div>
-    </header>
-
-    <main>
-      <section class="quiz-panel">
-        <div class="intro">
-          <h2 class="intro-title">
-            Vraag <span id="questionNumber">1</span> van <span id="totalQuestions">0</span>
-          </h2>
-          <p class="intro-subtitle">
-            Maak keuzes over wonen, verkeer, jongeren en meer. Na elke vraag leggen we kort uit wat
-            <strong>CDA Zandvoort</strong> wil.
-          </p>
-        </div>
-
-        <div class="progress-bar-wrapper">
-          <div class="progress-header">
-            <span>Voortgang</span>
-            <span id="progressLabel">0%</span>
-          </div>
-          <div class="progress-track">
-            <div class="progress-fill" id="progressFill"></div>
+</head>
+<body>
+  <div id="cda-dorpsquiz">
+    <div class="app" role="application" aria-label="Bewustwordingsspel CDA Zandvoort">
+      <header>
+        <div class="brand">
+          <div class="brand-logo" aria-hidden="true">C</div>
+          <div class="brand-text">
+            <h1>CDA Zandvoort – Dorpsquiz</h1>
+            <p>Ontdek in 3 minuten of jij ook een <strong>Zandvoorter voor Zandvoorters</strong> bent.</p>
           </div>
         </div>
+        <div class="badge-election">
+          <span class="badge-dot"></span>
+          Gemeenteraadsverkiezingen – Stem Dorpspartij CDA
+        </div>
+      </header>
 
-        <article class="question-card">
-          <div class="question-theme-tag">
-            <span></span>
-            <span id="themeName">Thema</span>
+      <main>
+        <section class="quiz-panel">
+          <div class="intro">
+            <h2 class="intro-title">
+              Vraag <span id="questionNumber">1</span> van <span id="totalQuestions">0</span>
+            </h2>
+            <p class="intro-subtitle">
+              Maak keuzes over wonen, verkeer, jongeren en meer. Na elke vraag leggen we kort uit wat
+              <strong>CDA Zandvoort</strong> wil.
+            </p>
           </div>
-          <p class="question-text" id="questionText">Vraagtekst…</p>
 
-          <ul class="options-list" id="optionsList"></ul>
-
-          <div class="explanation" id="explanationBox"></div>
-
-          <div class="quiz-footer">
-            <div class="score-pill">
-              <span class="score-dot"></span>
-              <span id="scoreText">0 goede antwoorden</span>
+          <div class="progress-bar-wrapper">
+            <div class="progress-header">
+              <span>Voortgang</span>
+              <span id="progressLabel">0%</span>
             </div>
-            <div style="display:flex; gap:6px;">
-              <button type="button" class="btn-secondary" id="restartBtn">Opnieuw spelen</button>
-              <button type="button" class="btn-primary" id="nextBtn" disabled>
-                Volgende vraag
-                <span aria-hidden="true">→</span>
+            <div class="progress-track">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+          </div>
+
+          <article class="question-card">
+            <div class="question-theme-tag">
+              <span></span>
+              <span id="themeName">Thema</span>
+            </div>
+            <p class="question-text" id="questionText">Vraagtekst…</p>
+
+            <ul class="options-list" id="optionsList"></ul>
+
+            <div class="explanation" id="explanationBox"></div>
+
+            <div class="quiz-footer">
+              <div class="score-pill">
+                <span class="score-dot"></span>
+                <span id="scoreText">0 goede antwoorden</span>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <button type="button" class="btn-secondary" id="restartBtn">Opnieuw spelen</button>
+                <button type="button" class="btn-primary" id="nextBtn" disabled>
+                  Volgende vraag
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="results-banner" id="resultsBanner"></div>
+          </article>
+        </section>
+
+        <aside class="side-panel" aria-label="Thema's CDA Zandvoort">
+          <div>
+            <p class="side-header">Waar staat onze dorpspartij voor?</p>
+            <p class="side-sub">Klik op een thema en zie wat CDA Zandvoort de komende jaren wil bereiken.</p>
+          </div>
+
+          <div class="theme-chips" id="themeChips"></div>
+
+          <div class="theme-details" id="themeDetails">
+            <h3>Wonen – Zandvoorters moeten Zandvoorters kunnen blijven</h3>
+            <p>
+              Meer betaalbare woningen, flexwoningen voor jongeren en passende woningen voor senioren zodat
+              doorstroming op gang komt – in Zandvoort zelf.
+            </p>
+          </div>
+
+          <div class="cta-card">
+            <strong>Past dit bij jouw ideeën voor Zandvoort?</strong>
+            <p>
+              Dan hoor je bij ons: de dorpspartij die luistert, doorpakt en Zandvoort samen met jou verder bouwt.
+            </p>
+            <div class="cta-actions">
+              <button type="button" class="btn-primary"
+                onclick="alert('Bedankt! Vertel een dorpsgenoot waarom jij CDA Zandvoort steunt.');">
+                Ik stem CDA Zandvoort
               </button>
+              <span class="pill-small">Van en <strong>voor</strong> Zandvoorters</span>
             </div>
+            <p class="share-text">
+              Tip: deel na het spelen met een buur of vriend:
+              <code>"Ik deed de CDA dorpsquiz – dit is mijn Zandvoort!"</code>
+            </p>
           </div>
-
-          <div class="results-banner" id="resultsBanner"></div>
-        </article>
-      </section>
-
-      <aside class="side-panel" aria-label="Thema's CDA Zandvoort">
-        <div>
-          <p class="side-header">Waar staat onze dorpspartij voor?</p>
-          <p class="side-sub">Klik op een thema en zie wat CDA Zandvoort de komende jaren wil bereiken.</p>
-        </div>
-
-        <div class="theme-chips" id="themeChips"></div>
-
-        <div class="theme-details" id="themeDetails">
-          <h3>Wonen – Zandvoorters moeten Zandvoorters kunnen blijven</h3>
-          <p>
-            Meer betaalbare woningen, flexwoningen voor jongeren en passende woningen voor senioren zodat
-            doorstroming op gang komt – in Zandvoort zelf.
-          </p>
-        </div>
-
-        <div class="cta-card">
-          <strong>Past dit bij jouw ideeën voor Zandvoort?</strong>
-          <p>
-            Dan hoor je bij ons: de dorpspartij die luistert, doorpakt en Zandvoort samen met jou verder bouwt.
-          </p>
-          <div class="cta-actions">
-            <button type="button" class="btn-primary"
-              onclick="alert('Bedankt! Vertel een dorpsgenoot waarom jij CDA Zandvoort steunt.');">
-              Ik stem CDA Zandvoort
-            </button>
-            <span class="pill-small">Van en <strong>voor</strong> Zandvoorters</span>
-          </div>
-          <p class="share-text">
-            Tip: deel na het spelen met een buur of vriend:
-            <code>"Ik deed de CDA dorpsquiz – dit is mijn Zandvoort!"</code>
-          </p>
-        </div>
-      </aside>
-    </main>
+        </aside>
+      </main>
+    </div>
   </div>
 
   <script>
@@ -909,6 +918,7 @@
           updateProgress();
           updateScore();
           nextBtn.disabled = true;
+          nextBtn.textContent = "Volgende vraag →";
         }
 
         function loadQuestion() {
@@ -1117,4 +1127,5 @@
       }
     })();
   </script>
-</div>
+</body>
+</html>
